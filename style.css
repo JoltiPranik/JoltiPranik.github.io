@@ -3,26 +3,36 @@
     height: 160px;
 }
 .button{
-    margin-left: 100px;
+    display: inline-block;
     width: 100px;
     height: 24px;
     border: 3px solid black;
     border-radius: 10px;
-    text-align: center;
+    background-color: white;
 }
 .button_link{
     text-decoration: none;
     color: black;
 }
+.button:hover{
+    background-color: rgb(193,193,193);
+}
 ul{
-    display: block;
-    justify-content: center;
+    background-color: gray;
+    text-align: center;
     padding-left: 0px;
+    margin: 0px;
 }
 li{
     list-style-type: none;
 }
 header{
-    display:flex;
-    justify-content: center;
+    display: flex;
+    background-color:rgb(22, 172, 134);
+}
+body{
+    height: 360px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: auto;
 }
