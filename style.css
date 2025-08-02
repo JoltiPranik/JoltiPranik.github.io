@@ -1,6 +1,15 @@
 .image{
+    display: inline-block;
     width: 320px;
     height: 160px;
+    background-image: url("image/cosmoimg.png");
+    background-position: center;
+    background-size: contain;
+}
+.image:hover{
+    background-image: url("image/imgame.gif");
+    background-position: center;
+    background-size: contain;
 }
 .button{
     display: inline-block;
