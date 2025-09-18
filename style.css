@@ -63,9 +63,17 @@ ul{
 li{
     list-style-type: none;
 }
+h1{
+    flex: 1;
+    text-align: center;
+    padding-right: 80%;
+    margin: 0;
+}
 header{
+    position: relative;
     display: flex;
     background-color:rgb(236, 183, 9);
+    align-items: center;
 }
 body{
     height: 360px;
