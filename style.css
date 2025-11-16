@@ -55,7 +55,7 @@
     background-color: rgb(193,193,193);
 }
 ul{
-    background-color: rgb(168, 159, 159);
+    
     text-align: center;
     padding-left: 0px;
     margin: 0px;
@@ -72,12 +72,12 @@ h1{
 header{
     position: relative;
     display: flex;
-    background-color:rgb(236, 183, 9);
+    background-size: contain;
+    background-image: url("image/header.png");
     align-items: center;
 }
 body{
     height: 360px;
-    padding-left: 50px;
-    padding-right: 50px;
     margin: auto;
+    background-image: url("image/fonsite.png");
 }
