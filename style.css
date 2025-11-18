@@ -13,7 +13,7 @@
     background-size: contain;
 }
 .image2{
-     margin: 0px;
+    margin: 0px;
     display: inline-block;
     width: 128px;
     height: 128px;
@@ -22,7 +22,7 @@
     background-size: contain;
 }
 .image3{
-     margin: 0px;
+    margin: 0px;
     display: inline-block;
     width: 64px;
     height: 64px;
@@ -31,11 +31,20 @@
     background-size: contain;
 }
 .image4{
-     margin: 0px;
+    margin: 0px;
     display: inline-block;
     width: 128px;
     height: 128px;
     background-image: url("image/IcyLogo.png");
+    background-position: center;
+    background-size: contain;
+}
+.image5{
+    margin: 0px;
+    display: inline-block;
+    width: 128px;
+    height: 128px;
+    background-image: url("image/Rocket.png");
     background-position: center;
     background-size: contain;
 }
