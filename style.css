@@ -48,6 +48,15 @@
     background-position: center;
     background-size: contain;
 }
+.image6{
+    margin: 0px;
+    display: inline-block;
+    width: 128px;
+    height: 128px;
+    background-image: url("image/LogoIcon.png");
+    background-position: center;
+    background-size: contain;
+}
 .button{
     display: inline-block;
     width: 100px;
