@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Bryton Studio</title>
+    <link rel="icon" type="image/png" href="image/Minilogo.png" sizes="64x64">
+    <style>
+        /* Сброс отступов для корректного отображения */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Основной фон body — градиент от серого к белому */
+        body {
+            background: linear-gradient(135deg, #cccccc 0%, #ffffff 100%);
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ===== ХЕДЕР: прилипающий + оранжевый градиент ===== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: linear-gradient(90deg, #ff7e05 0%, #ffb347 100%);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        header img {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            transition: transform 0.2s;
+        }
+
+        header img:hover {
+            transform: scale(1.05);
+        }
+
+        header h1 {
+            color: white;
+            font-size: 28px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        /* ===== КОНТЕЙНЕР ДЛЯ ГОРИЗОНТАЛЬНОГО СКРОЛЛА ===== */
+        .games-slider {
+            flex: 1;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            padding: 40px 20px;
+            scroll-behavior: smooth;
+            cursor: grab;
+            user-select: none; /* Убирает выделение при перетаскивании */
+        }
+
+        .games-slider:active {
+            cursor: grabbing;
+        }
+
+        /* Гибкий контейнер для карточек (все в строку) */
+        .games-container {
+            display: inline-flex;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        /* Карточка игры — красивая тень, закругления, белый фон */
+        .game-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 20px;
+            text-align: center;
+            width: 220px;
+            white-space: normal;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+            backdrop-filter: blur(2px);
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-card b {
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 12px;
+            color: #ff7e05;
+        }
+
+        /* Стили для картинок внутри карточек */
+        .game-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #f0f0f0;
+        }
+
+        /* Кнопка Play game */
+        .button_link {
+            display: inline-block;
+            margin-top: 12px;
+            background: #ff7e05;
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 40px;
+            font-weight: bold;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .button_link:hover {
+            background: #e56b00;
+            transform: scale(1.02);
+        }
+
+        /* ===== ФУТТЕР: оранжевый фон ===== */
+        footer {
+            background-color: #ff7e05;
+            color: white;
+            text-align: center;
+            padding: 20px 20px;
+            font-size: 0.95rem;
+            margin-top: auto;
+            border-top: 2px solid #e56b00;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        footer strong {
+            color: #fff3e0;
+        }
+
+        /* Настройка скроллбара (для красоты) */
+        .games-slider::-webkit-scrollbar {
+            height: 10px;
+        }
+        .games-slider::-webkit-scrollbar-track {
+            background: #e0e0e0;
+            border-radius: 10px;
+        }
+        .games-slider::-webkit-scrollbar-thumb {
+            background: #ff7e05;
+            border-radius: 10px;
+        }
+        .games-slider::-webkit-scrollbar-thumb:hover {
+            background: #e56b00;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="image/Logocom.png" alt="Bryton Studio Logo">
+    <h1>Official website</h1>
+</header>
+
+<!-- Горизонтальный скролл (пользователь сам листает) -->
+<div class="games-slider" id="gamesSlider">
+    <div class="games-container">
+        <!-- Miner City -->
+        <div class="game-card">
+            <b>Miner City</b>
+            <br>
+            <!-- Вставьте сюда правильный путь к картинке, например image/MinerCity.png -->
+            <img class="game-img" src="image/placeholder.png" alt="Miner City" 
+                 onerror="this.src='https://via.placeholder.com/150x150?text=Miner+City'">
+            <br>
+            <a class="button_link" href="Miner_City/index.html">Play game</a>
+        </div>
+
+        <!-- Tennis HotSeat -->
+        <div class="game-card">
+            <b>Tennis HotSeat</b>
+            <br>
+            <img class="game-img" src="image/placeholder2.png" alt="Tennis HotSeat"
+                 onerror="this.src='https://via.placeholder.com/150x150?text=Tennis'">
+            <br>
+            <a class="button_link" href="Tennis HOTSEAT/pong2.0.html">Play game</a>
+        </div>
+
+        <!-- Icy -->
+        <div class="game-card">
+            <b>Icy</b>
+            <br>
+            <img class="game-img" src="image/placeholder3.png" alt="Icy"
+                 onerror="this.src='https://via.placeholder.com/150x150?text=Icy'">
+            <br>
+            <a class="button_link" href="Icy/index.html">Play game</a>
+        </div>
+
+        <!-- Escape Planet -->
+        <div class="game-card">
+            <b>Escape Planet</b>
+            <br>
+            <img class="game-img" src="image/placeholder4.png" alt="Escape Planet"
+                 onerror="this.src='https://via.placeholder.com/150x150?text=Escape+Planet'">
+            <br>
+            <a class="button_link" href="Escape Planet/index.html">Play game</a>
+        </div>
+
+        <!-- ArcherIdle -->
+        <div class="game-card">
+            <b>ArcherIdle</b>
+            <br>
+            <img class="game-img" src="image/placeholder5.png" alt="ArcherIdle"
+                 onerror="this.src='https://via.placeholder.com/150x150?text=ArcherIdle'">
+            <br>
+            <a class="button_link" href="Archeridle/index.html">Play game</a>
+        </div>
+
+        <!-- Defence Of Slime City -->
+        <div class="game-card">
+            <b>Defence Of Slime City</b>
+            <br>
+            <img class="game-img" src="image/placeholder6.png" alt="Defence Of Slime City"
+                 onerror="this.src='https://via.placeholder.com/150x150?text=Defence+Slime'">
+            <br>
+            <a class="button_link" href="Defence Of Slime City/index.html">Play game</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><strong>Контакты:</strong> email@brytonstudio.com | Telegram: @bryton_studio</p>
+    <p><strong>Версия итерации:</strong> 2.0 (CSS + горизонтальный скролл мышью/тачем)</p>
+</footer>
+</body>
+</html>
