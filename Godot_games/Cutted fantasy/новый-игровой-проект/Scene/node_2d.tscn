@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cc1nqp7w318og"]
+
+[ext_resource type="Script" uid="uid://1wm8ctbvaat3" path="res://Script/Game_scene.gd" id="1_60wmb"]
+[ext_resource type="Texture2D" uid="uid://dd2kmimr87pfe" path="res://Sprite/Hellfire_tile_one.png" id="2_irwgg"]
+[ext_resource type="Texture2D" uid="uid://db8sye0jcu7c4" path="res://Sprite/Grass_tile_one.png" id="3_xvxua"]
+[ext_resource type="Texture2D" uid="uid://bqs5ncv0bhkbc" path="res://Sprite/dirt_tile_one.png" id="4_blrne"]
+[ext_resource type="PackedScene" uid="uid://cwghvi3xdgw2r" path="res://Scene/player.tscn" id="5_3opw3"]
+
+[sub_resource type="Curve2D" id="Curve2D_0hol4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -640, -360, 0, 0, 0, 0, 640, -360, 0, 0, 0, 0, 640, 360, 0, 0, 0, 0, -640, 360, 0, 0, 0, 0, -640, -360)
+}
+point_count = 5
+
+[node name="Node2D" type="Node2D" unique_id=800617153]
+script = ExtResource("1_60wmb")
+
+[node name="HellfireTileOne" type="Sprite2D" parent="." unique_id=688570225]
+visible = false
+texture_repeat = 2
+position = Vector2(640, 360)
+texture = ExtResource("2_irwgg")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 720)
+
+[node name="GrassTileOne" type="Sprite2D" parent="." unique_id=1986563277]
+visible = false
+texture_repeat = 2
+position = Vector2(640, 360)
+texture = ExtResource("3_xvxua")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 720)
+
+[node name="DirtTileOne" type="Sprite2D" parent="." unique_id=1427171968]
+visible = false
+texture_repeat = 2
+position = Vector2(640, 360)
+texture = ExtResource("4_blrne")
+region_enabled = true
+region_rect = Rect2(0, 0, 1280, 720)
+
+[node name="Player" parent="." unique_id=624314039 instance=ExtResource("5_3opw3")]
+position = Vector2(642, 365)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=3916749]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 720
+limit_smoothed = true
+
+[node name="Mobspath" type="Path2D" parent="." unique_id=900793256]
+position = Vector2(640, 360)
+curve = SubResource("Curve2D_0hol4")
+
+[node name="Mobspawnpath" type="PathFollow2D" parent="Mobspath" unique_id=1199485796]
+position = Vector2(-640, -360)
+
+[node name="Timer" type="Timer" parent="." unique_id=367516407]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
