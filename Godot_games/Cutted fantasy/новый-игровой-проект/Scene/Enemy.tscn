@@ -9,9 +9,12 @@ size = Vector2(25.5, 29.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_h0dic"]
 radius = 200.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jy6qf"]
+radius = 25.0
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1975514266]
 collision_layer = 4
-collision_mask = 6
+collision_mask = 22
 script = ExtResource("1_h0dic")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1630490625]
@@ -21,11 +24,19 @@ texture = ExtResource("1_nc1xg")
 position = Vector2(0.75, 1.75)
 shape = SubResource("RectangleShape2D_s7bn3")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=723334715]
+[node name="Threat_area" type="Area2D" parent="." unique_id=723334715]
 collision_layer = 4
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1220448429]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Threat_area" unique_id=1220448429]
 shape = SubResource("CircleShape2D_h0dic")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Attack_area" type="Area2D" parent="." unique_id=1480684979]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_area" unique_id=1192816068]
+shape = SubResource("CircleShape2D_jy6qf")
+
+[connection signal="body_entered" from="Threat_area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Attack_area" to="." method="_on_attack_area_body_entered"]

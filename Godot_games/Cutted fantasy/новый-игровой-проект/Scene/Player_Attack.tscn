@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c552gxf30si8i"]
+
+[ext_resource type="PackedScene" uid="uid://ebla71an2kk1" path="res://Scene/Mob_Attack.tscn" id="1_t17mg"]
+
+[node name="Area2D" unique_id=854532563 instance=ExtResource("1_t17mg")]
+collision_layer = 16
+collision_mask = 4
