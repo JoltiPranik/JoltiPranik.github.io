@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Blog</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/png" href="/DSLogo.png" sizes="64x64">
+    <link rel="stylesheet" href="/style.css"/>
 </head>
 <body>
     <header class="main-header">
         <div class="header-container">
+           <!-- ВЕРХНИЙ ЭТАЖ: Логотип и Переключатель языка -->
             <div class="header-top">
                 <div class="logo">
                     <span class="logo-icon">⛏️</span> 
@@ -16,20 +18,23 @@
                 </div>
             </div>
 
+            <!-- НИЖНИЙ ЭТАЖ: Навбар и Поиск -->
             <div class="header-bottom">
                 <nav class="main-navbar">
-                    <a href="news.html" class="nav-link">Новости</a>
-                    <a href="index.html" class="nav-link-active">Игры</a>
-                    <a href="about.html" class="nav-link">О нас</a>
+                    <a href="/news.html" class="nav-link">Новости</a>
+                    <a href="/index.html" class="nav-link-active">Игры</a>
+                    <a href="/about.html" class="nav-link">О нас</a>
                 </nav>
 
+                <!-- Строка поиска -->
                 <form class="search-form" action="#" method="GET">
                     <input type="text" placeholder="Поиск по шахте..." class="search-input">
                     <button type="submit" class="search-btn">🔍</button>
                 </form>
 
+                <!-- Переключатель языка -->
                 <div class="lang-switcher">
-                    <a href="#" class="lang-link active">RU</a>
+                    <a href="#" class="lang-link-active">RU</a>
                     <span class="lang-divider">|</span>
                     <a href="#" class="lang-link">EN</a>
                 </div>
@@ -42,22 +47,22 @@
             <section class="game-section">
                 <h1>Наши проекты</h1>
                 <div class="games-grid">
-                    <a href="/games/console-3d" class="game-card-link">
+                    <a href="/Games/DoSC/game1.html" class="game-card-link">
                         <article class="game-card">
                             <div class="game-thumb">🎮</div>
                             <div class="game-info">
-                                <h3>Консольный 3D движок</h3>
+                                <h3>Ыгра 1</h3>
                                 <p>Псевдо-3D рогалик на чистой Java с использованием библиотеки Lanterna.</p>
                                 <span class="tag">Java</span>
                             </div>
                         </article>
                     </a>
 
-                    <a href="/games/console-3d" class="game-card-link">
+                    <a href="/Games/game2.html" class="game-card-link">
                         <article class="game-card">
                             <div class="game-thumb">🎮</div>
                             <div class="game-info">
-                                <h3>Консольный 3D движок</h3>
+                                <h3>Ыгра 2</h3>
                                 <p>Псевдо-3D рогалик на чистой Java с использованием библиотеки Lanterna.</p>
                                 <span class="tag">Java</span>
                             </div>
